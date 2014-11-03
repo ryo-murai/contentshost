@@ -30,5 +30,12 @@
     <precompilation-enabled>true</precompilation-enabled>
     
     <static-files>
+        <include path="/**.html" />
+        <include path="/**.jpg" />
+        <include path="/**.jpeg" />
+        <include path="/**.gif" />
+        <include path="/**.png" />
+        <include path="/**.3gp" />
+        <include path="/**.mov" />
     </static-files>
 </appengine-web-app>
