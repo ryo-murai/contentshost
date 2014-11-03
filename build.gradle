@@ -1,0 +1,43 @@
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+def compatibilityVersion = 1.7
+sourceCompatibility = compatibilityVersion
+targetCompatibility = compatibilityVersion
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.google.appengine:gradle-appengine-plugin:1.9.14'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    def gaeVersion = '1.9.14'
+    //def groovyVersion = '2.3.7'
+    //groovy "org.codehaus.groovy:groovy-all:${groovyVersion}" 
+    //compile "org.codehaus.groovy:groovy-json:${groovyVersion}"
+    //compile "org.codehaus.groovy:groovy-servlet:${groovyVersion}"    
+    //compile "com.google.appengine:appengine-api-1.0-sdk:$gaeVersion",
+    
+    appengineSdk "com.google.appengine:appengine-java-sdk:$gaeVersion"
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.1'
+}
+
+if(file('appengineSettings.gradle').exists()) apply from: 'appengineSettings.gradle'
+
+appengine {
+  downloadSdk = true
+  warDir = file('src/main/webapp')
+}
+

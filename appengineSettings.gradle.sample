@@ -1,0 +1,6 @@
+appengine {
+  appcfg {
+    email = 'your_address@gmail.com'
+    password = 'your_password'
+  }
+}

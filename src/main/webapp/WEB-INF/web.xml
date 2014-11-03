@@ -1,0 +1,23 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+	  <context-param>
+	  	<param-name>javax.servlet.jsp.jstl.fmt.timeZone</param-name>
+	  	<param-value>Asia/Tokyo</param-value>
+	  </context-param>
+
+    <!-- Uncomment the following security constraint if you want to secure your incoming email endpoint -->
+    <!-- Only allow the SDK and administrators to have access to the incoming email endpoint -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>admin</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+    </welcome-file-list>
+</web-app>
