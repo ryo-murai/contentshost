@@ -2,5 +2,10 @@ appengine {
   appcfg {
     email = 'your_address@gmail.com'
     password = 'your_password'
+
+    app {
+      // task `appengineDownloadApp` require appId
+      id = 'your_app_id'
+    }
   }
 }
